@@ -1,0 +1,57 @@
+@model Game106.Backend.Models.WelcomeEmailModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông Báo Từ Hệ Thống Game106</title>
+    <style>
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #e9ecef; margin: 0; padding: 0; }
+        .email-wrapper { padding: 40px 20px; }
+        .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .header { background: linear-gradient(135deg, #FF6B6B, #556270); padding: 40px 30px; text-align: center; color: white; }
+        .header h1 { margin: 0; font-size: 32px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+        .header p { margin: 10px 0 0 0; font-size: 16px; opacity: 0.9; }
+        .content { padding: 40px 35px; color: #495057; line-height: 1.8; }
+        .content h2 { color: #212529; margin-top: 0; font-size: 22px; font-weight: 700; }
+        .highlight-box { background-color: #f8f9fa; border-left: 5px solid #FF6B6B; padding: 20px 25px; margin: 30px 0; border-radius: 0 8px 8px 0; }
+        .highlight-box p { margin: 0; font-size: 16px; color: #6c757d; }
+        .highlight-box strong { color: #FF6B6B; font-size: 28px; display: block; margin-top: 5px; font-weight: 900; }
+        .info-text { font-size: 15px; color: #666; background: #fdfdfd; border: 1px dashed #ced4da; padding: 15px; border-radius: 6px; }
+        .btn-wrapper { text-align: center; margin: 35px 0 10px 0; }
+        .btn { display: inline-block; padding: 14px 40px; background: linear-gradient(135deg, #FF6B6B, #ff4757); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 15px rgba(255,107,107,0.3); }
+        .footer { background-color: #f8f9fa; padding: 25px; text-align: center; font-size: 13px; color: #adb5bd; border-top: 1px solid #e9ecef; }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="container">
+            <div class="header">
+                <h1>🎮 GAME 106</h1>
+                <p>Báo Cáo Tự Động Từ Máy Chủ C#</p>
+            </div>
+            <div class="content">
+                <h2>Kính gửi, @Model.PlayerName!</h2>
+                <p>Đây là email tự động được kết xuất đồ hoạ bằng hệ thống khuôn mẫu <b>RazorLight</b> kết hợp giao thức <b>MailKit</b> của ASP.NET Core.</p>
+                
+                <div class="highlight-box">
+                    <p>Điểm số hệ thống ghi nhận:</p>
+                    <strong>@Model.RegistrationScore Điểm</strong>
+                </div>
+                
+                <p class="info-text">
+                    <i>💡 Báo cáo này chứng minh API gửi mail đã hoạt động trơn tru. Giao diện được thiết kế hiện đại, tương thích với hầu hết các thiết bị di động và ứng dụng Gmail.</i>
+                </p>
+                
+                <div class="btn-wrapper">
+                    <a href="https://github.com/duongki011" class="btn">Xem Dự Án Của Tôi</a>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Môn học / Đồ án Game106 Backend System</p>
+                <p>&copy; @DateTime.Now.Year - Phát triển bởi sinh viên Duongki011</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
