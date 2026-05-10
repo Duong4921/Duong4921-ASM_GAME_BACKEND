@@ -6,6 +6,16 @@
 # dotenv files
 .env
 
+# ================================================
+# SECURITY: Never commit real credentials!
+# Put your real DB/email/JWT secrets in this file:
+# appsettings.Development.json  (local dev)
+# appsettings.Production.json   (set via hosting env vars)
+# ================================================
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+
 # User-specific files
 *.rsuser
 *.suo
