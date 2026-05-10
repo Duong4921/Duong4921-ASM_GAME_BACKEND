@@ -4,6 +4,7 @@ using Game106.Backend.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Game106.Backend.Migrations
 {
     [DbContext(typeof(GameDbContext))]
-    partial class GameDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260328005901_AddTestUsers")]
+    partial class AddTestUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,7 +115,7 @@ namespace Game106.Backend.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "49f846e7-d9d0-4330-8be8-1d068535ba38",
+                            ConcurrencyStamp = "7c22218b-3869-484f-b5a0-8220b0e9db87",
                             Email = "user1@gmail.com",
                             EmailConfirmed = true,
                             IsDeleted = false,
@@ -122,11 +125,11 @@ namespace Game106.Backend.Migrations
                             NormalizedEmail = "USER1@GMAIL.COM",
                             NormalizedUserName = "USER1",
                             OTP = "",
-                            PasswordHash = "AQAAAAIAAYagAAAAEElkUF1TQ3LLwcjkwOCYj+BQGTE1fWNxphkeSerOw/Uu8PW+9mL87sMI7ChsXa+yxg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDM9KPV1pbZCdkbfHcBOtB5uwm0C9Z0IFmOJYNHMz8R0Cxh5GRQzYrpjk2P0iT4xyw==",
                             PhoneNumberConfirmed = false,
                             RegionId = 1,
                             RoleId = 2,
-                            SecurityStamp = "19037974-6202-4a8f-b134-cca8f6f742f9",
+                            SecurityStamp = "3b9c9a2c-a405-4d1b-8557-98c3b30989f3",
                             TwoFactorEnabled = false,
                             UserName = "user1"
                         },
@@ -134,7 +137,7 @@ namespace Game106.Backend.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3ab08a48-51a8-452b-9b5f-7d2b60d4f0bd",
+                            ConcurrencyStamp = "d53f73b8-a786-41f4-902a-a98a8cbee6ae",
                             Email = "user2@gmail.com",
                             EmailConfirmed = true,
                             IsDeleted = false,
@@ -144,11 +147,11 @@ namespace Game106.Backend.Migrations
                             NormalizedEmail = "USER2@GMAIL.COM",
                             NormalizedUserName = "USER2",
                             OTP = "",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGU2AziBn+d6Uqby0vg8VNS4eoyhtNTjF74TL8VyoROo+SyLASEDXYJBS20gtGm58A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOuMOQ0sO6w+zTYZnLLnj8YDtS0Yn0OVmRcbsIN9eIlkS1dv0AyP+DmdzQY657OzvQ==",
                             PhoneNumberConfirmed = false,
                             RegionId = 1,
                             RoleId = 2,
-                            SecurityStamp = "785c98f6-fe04-48c3-9606-e13ef6fa6085",
+                            SecurityStamp = "9392348c-a9f1-4991-80cd-91fa4d37b03a",
                             TwoFactorEnabled = false,
                             UserName = "user2"
                         },
@@ -156,7 +159,7 @@ namespace Game106.Backend.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a90055b4-23c6-4c44-a09f-2d78badf884b",
+                            ConcurrencyStamp = "d4b4a33b-00bd-411f-ae98-b5bfca4511ac",
                             Email = "user3@gmail.com",
                             EmailConfirmed = true,
                             IsDeleted = false,
@@ -166,11 +169,11 @@ namespace Game106.Backend.Migrations
                             NormalizedEmail = "USER3@GMAIL.COM",
                             NormalizedUserName = "USER3",
                             OTP = "",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJgxwmGF4oVSQwNl9pDXwPyIbCP/GVDbFoPgkAHHz/6zN+qc3RqqlcMj/Cc4W2uAsQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECJiq1JkffNedM985ytrWjNs016s05fpZekLaQCHQDZPxCbuUS+YlgYVeFPoRALNVw==",
                             PhoneNumberConfirmed = false,
                             RegionId = 1,
                             RoleId = 2,
-                            SecurityStamp = "61e06fbf-1c26-44a0-bcfb-936f319141b6",
+                            SecurityStamp = "03a453ef-71af-4aca-82d1-5247d9c615ce",
                             TwoFactorEnabled = false,
                             UserName = "user3"
                         },
@@ -178,7 +181,7 @@ namespace Game106.Backend.Migrations
                         {
                             Id = "4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "17f6460d-652a-4e8a-a8ae-de92e6c8c607",
+                            ConcurrencyStamp = "d0363d02-a7e6-4601-9ede-8ddd0f8b1748",
                             Email = "user4@gmail.com",
                             EmailConfirmed = true,
                             IsDeleted = false,
@@ -188,11 +191,11 @@ namespace Game106.Backend.Migrations
                             NormalizedEmail = "USER4@GMAIL.COM",
                             NormalizedUserName = "USER4",
                             OTP = "",
-                            PasswordHash = "AQAAAAIAAYagAAAAENfodsIkokg707sqn2l3bAHZDwBW9mqD99D9MSH068ZqIom3tC7nieZBSyhs9bAz5g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAIWRxc7SQp5Lj5rCCN6LqIX8y2Yv++ivIbBWiV/OGrQ4NbXpT2jV61XAzQxIsJVlg==",
                             PhoneNumberConfirmed = false,
                             RegionId = 1,
                             RoleId = 2,
-                            SecurityStamp = "d7603683-c8ea-46a4-8aed-cf74f123b4ed",
+                            SecurityStamp = "613e84b4-e06b-4d4c-b1d2-a8efef90dd39",
                             TwoFactorEnabled = false,
                             UserName = "user4"
                         },
@@ -200,7 +203,7 @@ namespace Game106.Backend.Migrations
                         {
                             Id = "5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0dd48135-cd68-41ed-9938-1a281115b55c",
+                            ConcurrencyStamp = "2eaefdea-8099-481d-9721-ed75d3cc1915",
                             Email = "user5@gmail.com",
                             EmailConfirmed = true,
                             IsDeleted = false,
@@ -210,11 +213,11 @@ namespace Game106.Backend.Migrations
                             NormalizedEmail = "USER5@GMAIL.COM",
                             NormalizedUserName = "USER5",
                             OTP = "",
-                            PasswordHash = "AQAAAAIAAYagAAAAELXBUumnyS30KWq2ipfyWt3v58r2dm/CERdmJT9XxkXCKKH2VDWAe1lgJrfg7j0SAQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMypx/K6ohRe8V6HS3jPvMAG6gTVS21+1LSDIKYmZoZazNqR/mFDq2k61pW0cSn26w==",
                             PhoneNumberConfirmed = false,
                             RegionId = 1,
                             RoleId = 2,
-                            SecurityStamp = "f975947b-e5e3-4712-8337-e510d8a31a3f",
+                            SecurityStamp = "8ef72df4-60f7-4278-8303-dd5669addf66",
                             TwoFactorEnabled = false,
                             UserName = "user5"
                         });
@@ -318,6 +321,27 @@ namespace Game106.Backend.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("LevelResults");
+                });
+
+            modelBuilder.Entity("Game106.Backend.Models.Player", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Players");
                 });
 
             modelBuilder.Entity("Game106.Backend.Models.Question", b =>

@@ -1,0 +1,27 @@
+@host = http://localhost:5279
+
+### LAB 3: Get All Game Levels
+GET {{host}}/api/APIGame/GetAllGameLevel
+
+### LAB 3: Get All Regions
+GET {{host}}/api/APIGame/GetAllRegion
+
+### LAB 3: Register New User
+POST {{host}}/api/APIGame/Register
+Content-Type: application/json
+
+{
+  "email": "testuser@gmail.com",
+  "name": "Test User",
+  "password": "Password123!",
+  "regionId": 1
+}
+
+### LAB 3: Login
+POST {{host}}/api/APIGame/Login
+Content-Type: application/json
+
+{
+  "email": "testuser@gmail.com",
+  "password": "Password123!"
+}

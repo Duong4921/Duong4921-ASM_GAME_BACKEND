@@ -1,0 +1,3 @@
+### LAB 8: Deployment
+# Kiểm tra url production đã deploy:
+GET http://gamedev.somee.com/api/Course/GetText

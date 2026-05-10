@@ -1,0 +1,16 @@
+@host = http://localhost:5279
+
+### LAB 5: Login for JWT Token
+# @name loginRequest
+POST {{host}}/api/APIGame/Login
+Content-Type: application/json
+
+{
+  "email": "testuser@gmail.com",
+  "password": "Password123!"
+}
+
+### LAB 5: Get Secured Resource with Token
+@authToken = {{loginRequest.response.body.data}}
+GET {{host}}/api/APIGame/GetAllResultByUser?userId=REPLACE_WITH_USER_ID
+Authorization: Bearer {{authToken}}

@@ -1,0 +1,136 @@
+// ==========================================
+// LAB7 SUBMISSION FILE
+// ==========================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Game106 Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #1e0b3c, #3f0d40, #0a1128);
+            background-size: 300% 300%;
+            animation: gradientAnim 15s ease infinite;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        @@keyframes gradientAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.05) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #f8f9fa !important;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .navbar-brand { font-size: 1.5rem; letter-spacing: 1px; }
+        
+        .nav-link:hover {
+            color: #ff007a !important;
+            transform: translateY(-2px);
+        }
+
+        .container > main {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        h1, h2, h3, h4, h5 { font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        
+        .btn-primary { background: linear-gradient(45deg, #ff007a, #7a00ff); border: none; box-shadow: 0 4px 15px rgba(255, 0, 122, 0.4); }
+        .btn-primary:hover { background: linear-gradient(45deg, #7a00ff, #ff007a); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(122, 0, 255, 0.6); }
+        
+        .btn-success { background: linear-gradient(45deg, #00f2fe, #4facfe); border: none; }
+        .btn-success:hover { background: linear-gradient(45deg, #4facfe, #00f2fe); transform: translateY(-2px); }
+
+        .form-control, .form-select {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 10px;
+        }
+        .form-control:focus, .form-select:focus {
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            box-shadow: 0 0 10px rgba(255, 0, 122, 0.5);
+            border-color: #ff007a;
+        }
+        
+        /* Chỉnh lại label và các table (bảng) cho phù hợp Dark Mode */
+        label { font-weight: 600; margin-top: 10px; }
+        table { color: white !important; }
+        thead { background: rgba(0,0,0,0.4); }
+        tbody tr:hover { background: rgba(255,255,255,0.05) !important; color: white !important; }
+        a { color: #00f2fe; text-decoration: none; }
+        a:hover { color: #ff007a; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">🌌 Game106 Admin</a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Game" asp-action="Index">Quản lý Level</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Question" asp-action="Index">Quản lý C.Hỏi</a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-warning" asp-area="" asp-controller="Home" asp-action="Logout">🔥 Đăng xuất (@User.Identity.Name)</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Đăng ký Admin</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

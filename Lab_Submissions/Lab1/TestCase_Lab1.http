@@ -1,0 +1,6 @@
+@host = http://localhost:5279
+### LAB 1: Get Text API
+GET {{host}}/api/Course/GetText
+
+### LAB 1: Get Course JSON Info
+GET {{host}}/api/Course/GetCourseInfo

@@ -1,0 +1,17 @@
+@host = http://localhost:5279
+
+### LAB 4: Forgot Password Flow (1) - Yêu cầu gửi OTP
+POST {{host}}/api/APIGame/ForgotPassword?email=testuser@gmail.com
+
+### LAB 4: Change User Password
+PUT {{host}}/api/APIGame/ChangeUserPassword
+Content-Type: application/json
+
+{
+  "userId": "REPLACE_WITH_USER_ID",
+  "oldPassword": "Password123!",
+  "newPassword": "NewPassword123!"
+}
+
+### LAB 4: Delete Account
+DELETE {{host}}/api/APIGame/DeleteAccount?userId=REPLACE_WITH_USER_ID
